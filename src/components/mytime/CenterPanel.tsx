@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight, Settings, Users, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { format, addDays, subDays } from "date-fns";
-import type { Task, StudyBlock, TaskStatus } from "@/data/mockData";
+import type { Task, StudyBlock } from "@/data/mockData";
 import TimelineGrid from "./TimelineGrid";
 import TaskUpdateList from "./TaskUpdateList";
 

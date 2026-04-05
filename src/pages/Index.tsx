@@ -67,6 +67,7 @@ export default function Index() {
       <DistributeModal open={distributeOpen} onOpenChange={setDistributeOpen} tasks={tasks} />
       <StudyBlockModal open={studyOpen} onOpenChange={setStudyOpen} />
       <TimeEntryModal open={timeEntryOpen} onOpenChange={setTimeEntryOpen} />
+      <DailyReportModal open={reportOpen} onOpenChange={setReportOpen} tasks={tasks} studyBlocks={mockStudyBlocks} currentDate={currentDate} />
     </div>
   );
 }
