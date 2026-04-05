@@ -20,6 +20,7 @@ export default function Index() {
   const [distributeOpen, setDistributeOpen] = useState(false);
   const [studyOpen, setStudyOpen] = useState(false);
   const [timeEntryOpen, setTimeEntryOpen] = useState(false);
+  const [reportOpen, setReportOpen] = useState(false);
 
   const isLead = currentUser.role === "admin" || currentUser.role === "lead";
 
