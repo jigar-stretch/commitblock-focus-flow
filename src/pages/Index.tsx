@@ -6,6 +6,7 @@ import PreferencesModal from "@/components/mytime/PreferencesModal";
 import DistributeModal from "@/components/mytime/DistributeModal";
 import StudyBlockModal from "@/components/mytime/StudyBlockModal";
 import TimeEntryModal from "@/components/mytime/TimeEntryModal";
+import DailyReportModal from "@/components/mytime/DailyReportModal";
 import { mockTasks, mockStudyBlocks, currentUser } from "@/data/mockData";
 import type { Task, TaskStatus } from "@/data/mockData";
 
@@ -19,6 +20,7 @@ export default function Index() {
   const [distributeOpen, setDistributeOpen] = useState(false);
   const [studyOpen, setStudyOpen] = useState(false);
   const [timeEntryOpen, setTimeEntryOpen] = useState(false);
+  const [reportOpen, setReportOpen] = useState(false);
 
   const isLead = currentUser.role === "admin" || currentUser.role === "lead";
 
@@ -56,6 +58,7 @@ export default function Index() {
         onTaskUpdate={handleTaskUpdate}
         onOpenPreferences={() => setPrefsOpen(true)}
         onOpenDistribute={() => setDistributeOpen(true)}
+        onOpenReport={() => setReportOpen(true)}
         isLead={isLead}
       />
       <RightPanel currentDate={currentDate} onDateChange={setCurrentDate} />
@@ -64,6 +67,7 @@ export default function Index() {
       <DistributeModal open={distributeOpen} onOpenChange={setDistributeOpen} tasks={tasks} />
       <StudyBlockModal open={studyOpen} onOpenChange={setStudyOpen} />
       <TimeEntryModal open={timeEntryOpen} onOpenChange={setTimeEntryOpen} />
+      <DailyReportModal open={reportOpen} onOpenChange={setReportOpen} tasks={tasks} studyBlocks={mockStudyBlocks} currentDate={currentDate} />
     </div>
   );
 }

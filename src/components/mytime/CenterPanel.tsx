@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Settings, FileText, Users } from "lucide-react";
+import { ChevronLeft, ChevronRight, Settings, Users, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { format, addDays, subDays } from "date-fns";
-import type { Task, StudyBlock, TaskStatus } from "@/data/mockData";
+import type { Task, StudyBlock } from "@/data/mockData";
 import TimelineGrid from "./TimelineGrid";
 import TaskUpdateList from "./TaskUpdateList";
 
@@ -16,6 +16,7 @@ interface CenterPanelProps {
   onTaskUpdate: (id: string, updates: Partial<Task>) => void;
   onOpenPreferences: () => void;
   onOpenDistribute: () => void;
+  onOpenReport: () => void;
   isLead: boolean;
 }
 
@@ -27,6 +28,7 @@ export default function CenterPanel({
   onTaskUpdate,
   onOpenPreferences,
   onOpenDistribute,
+  onOpenReport,
   isLead,
 }: CenterPanelProps) {
   const [viewMode, setViewMode] = useState<ViewMode>("daily");
@@ -88,7 +90,11 @@ export default function CenterPanel({
           </span>
         </div>
 
-        <div className="ml-auto flex items-center gap-1">
+        <div className="ml-auto flex items-center gap-1.5">
+          <Button size="sm" className="h-7 text-xs gap-1.5 bg-accent text-accent-foreground hover:bg-accent/90" onClick={onOpenReport}>
+            <Send className="h-3 w-3" />
+            Submit Report
+          </Button>
           {isLead && (
             <Button variant="outline" size="sm" className="h-7 text-xs gap-1 border-accent/30 text-accent hover:bg-accent/10" onClick={onOpenDistribute}>
               Distribute Work
@@ -96,9 +102,6 @@ export default function CenterPanel({
           )}
           <Button variant="ghost" size="icon" className="h-7 w-7" onClick={onOpenPreferences}>
             <Settings className="h-4 w-4" />
-          </Button>
-          <Button variant="ghost" size="icon" className="h-7 w-7">
-            <FileText className="h-4 w-4" />
           </Button>
         </div>
       </div>
