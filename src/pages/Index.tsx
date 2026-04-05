@@ -58,6 +58,7 @@ export default function Index() {
         onTaskUpdate={handleTaskUpdate}
         onOpenPreferences={() => setPrefsOpen(true)}
         onOpenDistribute={() => setDistributeOpen(true)}
+        onOpenReport={() => setReportOpen(true)}
         isLead={isLead}
       />
       <RightPanel currentDate={currentDate} onDateChange={setCurrentDate} />
