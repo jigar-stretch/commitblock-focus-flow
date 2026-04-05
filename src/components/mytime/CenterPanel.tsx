@@ -28,6 +28,7 @@ export default function CenterPanel({
   onTaskUpdate,
   onOpenPreferences,
   onOpenDistribute,
+  onOpenReport,
   isLead,
 }: CenterPanelProps) {
   const [viewMode, setViewMode] = useState<ViewMode>("daily");
