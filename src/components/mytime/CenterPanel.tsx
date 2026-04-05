@@ -16,6 +16,7 @@ interface CenterPanelProps {
   onTaskUpdate: (id: string, updates: Partial<Task>) => void;
   onOpenPreferences: () => void;
   onOpenDistribute: () => void;
+  onOpenReport: () => void;
   isLead: boolean;
 }
 
