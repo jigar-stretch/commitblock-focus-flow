@@ -6,6 +6,7 @@ import PreferencesModal from "@/components/mytime/PreferencesModal";
 import DistributeModal from "@/components/mytime/DistributeModal";
 import StudyBlockModal from "@/components/mytime/StudyBlockModal";
 import TimeEntryModal from "@/components/mytime/TimeEntryModal";
+import DailyReportModal from "@/components/mytime/DailyReportModal";
 import { mockTasks, mockStudyBlocks, currentUser } from "@/data/mockData";
 import type { Task, TaskStatus } from "@/data/mockData";
 
